@@ -106,7 +106,6 @@ public class Box<T> {
         return max;
     }
 
-
     private static void createBox(Scanner scanner, List<Box<? extends Number>> boxes) {
         scanner.useLocale(Locale.US); // Устанавливаем локаль для работы с дробными числами
         System.out.println("Выберите тип числа:");

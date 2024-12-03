@@ -231,9 +231,11 @@ public class Methods {
                             }
                             lists.add(list);
                         }
-                        // Используем метод countTotalElements.
-                        int totalElements = countTotalElements(lists);
-                        System.out.println("Общее количество элементов во всех списках: " + totalElements);
+                        // Преобразуем список списков в список их размеров
+                        List<Integer> sizes = transform(lists, List::size);
+
+                        // Суммируем размеры, чтобы получить общее количество элементов
+                        int totalElements = reduce(sizes, 0, Integer::sum);
                     } catch (NumberFormatException e) {
                         System.out.println("Ошибка ввода! Пожалуйста, введите списки корректно.");
                     }
